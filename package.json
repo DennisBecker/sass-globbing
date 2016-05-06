@@ -1,6 +1,6 @@
 {
   "name": "sass-globbing",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha1",
   "description": "Create an @import map file for CSS preprocessors",
   "main": "index.js",
   "scripts": {

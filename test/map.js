@@ -1,17 +1,19 @@
 var SassGlobbing = require('../index'),
     fs = require('fs'),
-    fs_path = require('fs-path'),
+    fse = require('fs-extra'),
+
     expect = require('chai').expect;
 
 describe('@import map creation', function() {
     before(function() {
-		fs_path.removeSync('tmp');
-        fs_path.mkdirSync('tmp');
-        fs_path.copySync('test/fixtures', 'tmp');
+		fse.removeSync('tmp');
+        fse.ensureDirSync('tmp');
+
+        fse.copySync('test/fixtures', 'tmp');
     });
 
     after(function() {
-		fs_path.removeSync('tmp');
+		fse.removeSync('tmp');
 	});
 
     it('runs with default options', function() {

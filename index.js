@@ -1,7 +1,6 @@
 'use strict';
 
-var fs = require('fs'),
-    fs_path = require('fs-path'),
+var fse = require('fs-extra'),
     glob = require('glob'),
     path = require('path');
 
@@ -76,7 +75,7 @@ SassGlobbing.prototype.build = function() {
         importMapFile += importStatement;
     });
 
-    fs_path.writeFileSync(dest, importMapFile);
+    fse.outputFileSync(dest, importMapFile);
 }
 
 module.exports = SassGlobbing;
